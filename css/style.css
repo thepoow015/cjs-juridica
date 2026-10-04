@@ -1790,3 +1790,14 @@ textarea:focus-visible {
         height: 220px;
     }
 }
+
+.map-wrapper {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    margin-bottom: 20px;
+}

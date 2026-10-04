@@ -562,7 +562,8 @@ img {
 .about-image-wrapper {
     position: relative;
     border-radius: var(--radius-lg);
-    overflow: hidden;
+    overflow: visible;  /* Cambiado para que el badge no se recorte */
+    margin-bottom: 30px; /* Espacio inferior para el badge */
 }
 
 .about-image {
@@ -1728,4 +1729,64 @@ select:focus-visible,
 textarea:focus-visible {
     outline: 3px solid var(--gold);
     outline-offset: 2px;
+}
+
+/* ============================================
+   CORRECCIONES - FIX DE DISEÑO
+   ============================================ */
+
+/* Fix 1: Badge "10+" en Sobre Nosotros */
+.about-image-wrapper {
+    overflow: visible;
+    margin-bottom: 30px;
+}
+
+.about-experience-badge {
+    bottom: -20px;
+    right: 20px;
+    z-index: 2;
+}
+
+/* Fix 2: Mapa que se superpone con el aviso legal */
+.map-wrapper {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.map-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Fix 3: Aviso legal por encima del mapa */
+.legal-notice-section {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 767.98px) {
+    .about-experience-badge {
+        right: 12px;
+        bottom: -16px;
+        padding: 14px 18px;
+    }
+    
+    .badge-number {
+        font-size: 1.6rem;
+    }
+    
+    .badge-text {
+        font-size: 0.72rem;
+    }
+    
+    .map-wrapper {
+        height: 220px;
+    }
 }
